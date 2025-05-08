@@ -113,3 +113,7 @@ export async function isAuthenticated(){
     return !!user;
 }
 
+export async function clearAllCookies() {
+    const cookieStore = await cookies();
+    cookieStore.getAll().forEach(cookie => cookieStore.delete(cookie.name));
+}
