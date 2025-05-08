@@ -9,6 +9,7 @@ export async function GET(){
 
 export async function POST(req:Request){
     const { type, role, level, techstack, amount, userid } = await req.json();
+    console.log("user id is : " , userid);
     try {
         const { text: questions } = await generateText({
             model : google('gemini-2.0-flash-001'),
